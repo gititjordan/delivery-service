@@ -40,7 +40,7 @@ public class PrepareShipmentRequest {
 
     public PrepareShipmentRequest() {
         this.asin   = "0000000000";
-        this.description = "Frank Test Default Item - should not ever be needed - only used for testing";
+        this.description = " Test Default Item - should not ever be needed - only used for testing";
         this.length = new BigDecimal(0);
         this.width  = new BigDecimal(0);
         this.height = new BigDecimal(0);

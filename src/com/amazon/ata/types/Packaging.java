@@ -45,21 +45,24 @@ public class Packaging {
         this.height = height;
     }
 
+    public Packaging(Material material) {
+    }
+
     public Material getMaterial() {
         return material;
     }
 
-    public BigDecimal getLength() {
-        return length;
-    }
-
-    public BigDecimal getWidth() {
-        return width;
-    }
-
-    public BigDecimal getHeight() {
-        return height;
-    }
+//    public BigDecimal getLength() {
+//        return length;
+//    }
+//
+//    public BigDecimal getWidth() {
+//        return width;
+//    }
+//
+//    public BigDecimal getHeight() {
+//        return height;
+//    }
 
     /**
      * Returns whether the given item will fit in this packaging.
@@ -68,9 +71,10 @@ public class Packaging {
      * @return whether the item will fit in this packaging
      */
     public boolean canFitItem(Item item) {
-        return this.length.compareTo(item.getLength()) > 0 &&
-                this.width.compareTo(item.getWidth()) > 0 &&
-                this.height.compareTo(item.getHeight()) > 0;
+//        return this.length.compareTo(item.getLength()) > 0 &&
+//                this.width.compareTo(item.getWidth()) > 0 &&
+//                this.height.compareTo(item.getHeight()) > 0;
+        throw new UnsupportedOperationException("Invalid operation. This method is not supported!");
     }
 
     /**
@@ -78,14 +82,16 @@ public class Packaging {
      * @return the mass of the packaging
      */
     public BigDecimal getMass() {
-        BigDecimal two = BigDecimal.valueOf(2);
+//        BigDecimal two = BigDecimal.valueOf(2);
+//
+//        // For simplicity, we ignore overlapping flaps
+//        BigDecimal endsArea = length.multiply(width).multiply(two);
+//        BigDecimal shortSidesArea = length.multiply(height).multiply(two);
+//        BigDecimal longSidesArea = width.multiply(height).multiply(two);
+//
+//        return endsArea.add(shortSidesArea).add(longSidesArea);
+        throw new UnsupportedOperationException("Invalid operation. This method is not supported!");
 
-        // For simplicity, we ignore overlapping flaps
-        BigDecimal endsArea = length.multiply(width).multiply(two);
-        BigDecimal shortSidesArea = length.multiply(height).multiply(two);
-        BigDecimal longSidesArea = width.multiply(height).multiply(two);
-
-        return endsArea.add(shortSidesArea).add(longSidesArea);
     }
 
     @Override
@@ -111,6 +117,8 @@ public class Packaging {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getMaterial(), getLength(), getWidth(), getHeight());
+        return Objects.hash(getMaterial());
     }
+
+
 }

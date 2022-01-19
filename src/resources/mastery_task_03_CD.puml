@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+
+class Packaging {
++canFitItem()
++getMass()
+}
+
+class Box{
++canFitItem()
++getMass()
+-BigDecimal length
+-BigDecimal width
+-BigDecimal height
+
+}
+
+class PolyBag{
+-BigDecimal volume
++canFitItem()
++getMass()
+
+}
+
+class Material{
++CORRUGATE
++LAMINATED_PLASTIC
+}
+
+Material --o Packaging
+PolyBag --|> Packaging
+Box --|> Packaging
+@enduml
