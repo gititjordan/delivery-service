@@ -3,11 +3,12 @@ package com.amazon.ata.types;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Box extends Packaging{
-     private BigDecimal mass;
+public class Box extends Packaging {
+
      BigDecimal length;
      BigDecimal width;
      BigDecimal height;
+     BigDecimal mass;
 
     /**
      * Instantiates a new Packaging object.
@@ -34,9 +35,10 @@ public class Box extends Packaging{
 
     @Override
     public BigDecimal getMass() {
-        BigDecimal endsArea = length.multiply(width).multiply(BigDecimal.valueOf(2));
-        BigDecimal shortSidesArea = length.multiply(height).multiply(BigDecimal.valueOf(2)) ;
-        BigDecimal longSidesArea = width.multiply(height).multiply(BigDecimal.valueOf(2)) ;
+        BigDecimal two = BigDecimal.valueOf(2);
+        BigDecimal endsArea = length.multiply(width).multiply(two);
+        BigDecimal shortSidesArea = length.multiply(height).multiply(two) ;
+        BigDecimal longSidesArea = width.multiply(height).multiply(two) ;
         mass = endsArea.add(shortSidesArea).add(longSidesArea) ;
         return mass;
 
@@ -44,7 +46,9 @@ public class Box extends Packaging{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
         if (o == null) {
 //            System.out.println(this.getClass());
 //            System.out.println(o.getClass());
@@ -61,6 +65,6 @@ public class Box extends Packaging{
 
     @Override
     public int hashCode() {
-    return Objects.hash(super.hashCode(),length,width,height);
+    return Objects.hash(super.hashCode(), length, width, height);
     }
 }

@@ -119,7 +119,7 @@ public class PackagingTest {
     @Test
     public void equals_sameObject_isTrue() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean result = packaging.equals(packaging);
@@ -131,7 +131,7 @@ public class PackagingTest {
     @Test
     public void equals_nullObject_returnsFalse() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean isEqual = packaging.equals(null);
@@ -143,7 +143,7 @@ public class PackagingTest {
     @Test
     public void equals_differentClass_returnsFalse() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
         Object other = "String type!";
 
         // WHEN
@@ -156,8 +156,8 @@ public class PackagingTest {
     @Test
     public void equals_sameAttributes_returnsTrue() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
-        Object other = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Object other = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN
         boolean isEqual = packaging.equals(other);
@@ -169,8 +169,8 @@ public class PackagingTest {
     @Test
     public void hashCode_equalObjects_equalHash() {
         // GIVEN
-        Packaging packaging = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
-        Packaging other = new Packaging(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging packaging = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
+        Packaging other = new Box(Material.CORRUGATE, packagingLength, packagingWidth, packagingHeight);
 
         // WHEN + THEN
         assertEquals(packaging.hashCode(), other.hashCode(), "Equal objects should have equal hashCodes");

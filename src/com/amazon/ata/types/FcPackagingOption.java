@@ -15,7 +15,7 @@ public class FcPackagingOption {
     /**
      * A packaging that is available at the fulfillment center.
      */
-    private Packaging packaging;
+    private Packaging packaging ;
 
 
     /**

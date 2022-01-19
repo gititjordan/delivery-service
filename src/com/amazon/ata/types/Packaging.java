@@ -19,17 +19,17 @@ public class Packaging {
     /**
      * This packaging's length.
      */
-    private BigDecimal length;
-
-    /**
-     * This packaging's smallest dimension.
-     */
-    private BigDecimal width;
-
-    /**
-     * This packaging's largest dimension.
-     */
-    private BigDecimal height;
+//    private BigDecimal length;
+//
+//    /**
+//     * This packaging's smallest dimension.
+//     */
+//    private BigDecimal width;
+//
+//    /**
+//     * This packaging's largest dimension.
+//     */
+//    private BigDecimal height;
 
     /**
      * Instantiates a new Packaging object.
@@ -38,15 +38,14 @@ public class Packaging {
      * @param width - the width of the package
      * @param height - the height of the package
      */
-    public Packaging(Material material, BigDecimal length, BigDecimal width, BigDecimal height) {
+    public Packaging(Material material) {
         this.material = material;
-        this.length = length;
-        this.width = width;
-        this.height = height;
+//        this.length = length;
+//        this.width = width;
+//        this.height = height;
     }
 
-    public Packaging(Material material) {
-    }
+
 
     public Material getMaterial() {
         return material;
