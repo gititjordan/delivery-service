@@ -33,6 +33,18 @@ public class Box extends Packaging {
 
     }
 
+    public BigDecimal getLength() {
+        return length;
+    }
+
+    public BigDecimal getWidth() {
+        return width;
+    }
+
+    public BigDecimal getHeight() {
+        return height;
+    }
+
     @Override
     public BigDecimal getMass() {
         BigDecimal two = BigDecimal.valueOf(2);

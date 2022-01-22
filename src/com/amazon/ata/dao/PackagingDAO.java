@@ -9,13 +9,14 @@ import com.amazon.ata.types.Item;
 import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentOption;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Access data for which packaging is available at which fulfillment center.
  */
 public class PackagingDAO {
+    Map<FulfillmentCenter, Set<FcPackagingOption>> packagingOptions = new HashMap<>();
+
     /**
      * A list of fulfillment centers with a packaging options they provide.
      */
@@ -44,7 +45,8 @@ public class PackagingDAO {
             throws UnknownFulfillmentCenterException, NoPackagingFitsItemException {
 
         // Check all FcPackagingOptions for a suitable Packaging in the given FulfillmentCenter
-        List<ShipmentOption> result = new ArrayList<>();
+        Set<ShipmentOption> result = new HashSet<>();
+        List<ShipmentOption> newResult = new ArrayList<>();
         boolean fcFound = false;
         for (FcPackagingOption fcPackagingOption : fcPackagingOptions) {
             Packaging packaging = fcPackagingOption.getPackaging();
@@ -58,8 +60,10 @@ public class PackagingDAO {
                             .withPackaging(packaging)
                             .withFulfillmentCenter(fulfillmentCenter)
                             .build());
+
                 }
             }
+
         }
 
         // Notify caller about unexpected results
@@ -72,7 +76,9 @@ public class PackagingDAO {
             throw new NoPackagingFitsItemException(
                     String.format("No packaging at %s fits %s!", fulfillmentCenter.getFcCode(), item));
         }
+        newResult.addAll(result);
 
-        return result;
+
+        return newResult ;
     }
 }
