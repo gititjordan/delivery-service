@@ -3,12 +3,15 @@ package com.amazon.ata.types;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class PolyBag extends Packaging  {
-     BigDecimal volume;
-//    private BigDecimal volume = Math.ceil(Math.sqrt(volume.doubleValue()) * 0.6);
+public class PolyBag extends Packaging {
+    BigDecimal volume;
+
+    //    private BigDecimal volume = Math.ceil(Math.sqrt(volume.doubleValue()) * 0.6);
+
     /**
      * Instantiates a new Packaging object.
      *
+     * @param volume   - the Volume of the package
      * @param material - the Material of the package
      */
     public PolyBag(Material material, BigDecimal volume) {

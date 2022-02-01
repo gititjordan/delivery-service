@@ -15,6 +15,7 @@ public class UnknownFulfillmentCenterException extends Exception {
 
     /**
      * Exception with a message, but no cause.
+     *
      * @param message A descriptive message for this exception.
      */
     public UnknownFulfillmentCenterException(String message) {
@@ -23,6 +24,7 @@ public class UnknownFulfillmentCenterException extends Exception {
 
     /**
      * Exception with no message, but with a cause.
+     *
      * @param cause The original throwable resulting in this exception.
      */
     public UnknownFulfillmentCenterException(Throwable cause) {
@@ -31,8 +33,9 @@ public class UnknownFulfillmentCenterException extends Exception {
 
     /**
      * Exception with message and cause.
+     *
      * @param message A descriptive message for this exception.
-     * @param cause The original throwable resulting in this exception.
+     * @param cause   The original throwable resulting in this exception.
      */
     public UnknownFulfillmentCenterException(String message, Throwable cause) {
         super(message, cause);

@@ -1,6 +1,12 @@
 package com.amazon.ata.datastore;
 
-import com.amazon.ata.types.*;
+import com.amazon.ata.types.Box;
+import com.amazon.ata.types.FcPackagingOption;
+import com.amazon.ata.types.FulfillmentCenter;
+import com.amazon.ata.types.Material;
+import com.amazon.ata.types.Packaging;
+import com.amazon.ata.types.PolyBag;
+
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
@@ -10,8 +16,6 @@ import java.util.List;
  * Stores all configured packaging pairs for all fulfillment centers.
  */
 public class PackagingDatastore {
-
-
 
 
     /**
@@ -29,20 +33,6 @@ public class PackagingDatastore {
             createFcPackagingOption("PDX1", Material.CORRUGATE, "40", "40", "40"),
             createFcPackagingOption("PDX1", Material.CORRUGATE, "60", "60", "60"),
             createFcPackagingOption("PDX1", Material.CORRUGATE, "60", "60", "60")
-            //Polybags
-//            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
-//            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
-//            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
-//            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
-//            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
-//            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
-//            createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
-//            createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
-//            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
-//            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(6000)),
-//            createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
-//            createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
-//            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000))
 
     );
 
@@ -53,9 +43,10 @@ public class PackagingDatastore {
      */
     private FcPackagingOption createFcPackagingOption(String fcCode, Material material, BigDecimal volume) {
         FulfillmentCenter fulfillmentCenter = new FulfillmentCenter(fcCode);
-        Packaging packaging = new PolyBag(material, volume); // PolyBag
+        Packaging packaging = new PolyBag(material, volume);
         return new FcPackagingOption(fulfillmentCenter, packaging);
     }
+
     private FcPackagingOption createFcPackagingOption(String fcCode, Material material,
                                                       String length, String width, String height) {
         FulfillmentCenter fulfillmentCenter = new FulfillmentCenter(fcCode);

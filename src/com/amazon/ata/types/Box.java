@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class Box extends Packaging {
 
-     BigDecimal length;
-     BigDecimal width;
-     BigDecimal height;
-     BigDecimal mass;
+    BigDecimal length;
+    BigDecimal width;
+    BigDecimal height;
+    BigDecimal mass;
 
     /**
      * Instantiates a new Packaging object.
@@ -49,9 +49,9 @@ public class Box extends Packaging {
     public BigDecimal getMass() {
         BigDecimal two = BigDecimal.valueOf(2);
         BigDecimal endsArea = length.multiply(width).multiply(two);
-        BigDecimal shortSidesArea = length.multiply(height).multiply(two) ;
-        BigDecimal longSidesArea = width.multiply(height).multiply(two) ;
-        mass = endsArea.add(shortSidesArea).add(longSidesArea) ;
+        BigDecimal shortSidesArea = length.multiply(height).multiply(two);
+        BigDecimal longSidesArea = width.multiply(height).multiply(two);
+        mass = endsArea.add(shortSidesArea).add(longSidesArea);
         return mass;
 
     }
@@ -62,8 +62,6 @@ public class Box extends Packaging {
             return true;
         }
         if (o == null) {
-//            System.out.println(this.getClass());
-//            System.out.println(o.getClass());
             return false;
         }
         if (getClass() != o.getClass()) {
@@ -77,6 +75,7 @@ public class Box extends Packaging {
 
     @Override
     public int hashCode() {
-    return Objects.hash(super.hashCode(), length, width, height);
+        return Objects.hash(super.hashCode(), length, width, height);
+
     }
 }

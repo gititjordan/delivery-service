@@ -29,6 +29,7 @@ public class ShipmentService {
 
     /**
      * Instantiates a new ShipmentService object.
+     *
      * @param packagingDAO packaging data access object used to retrieve all available shipment options
      * @param costStrategy cost strategy used to calculate the relative cost of a shipment option
      */
@@ -36,10 +37,11 @@ public class ShipmentService {
         this.packagingDAO = packagingDAO;
         this.costStrategy = costStrategy;
     }
+
     /**
      * Finds the shipment option for the given item and fulfillment center with the lowest cost.
      *
-     * @param item the item to package
+     * @param item              the item to package
      * @param fulfillmentCenter fulfillment center in which to look for the packaging
      * @return the lowest cost shipment option for the item and fulfillment center, or null if none found
      */

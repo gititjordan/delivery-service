@@ -15,13 +15,14 @@ public class FcPackagingOption {
     /**
      * A packaging that is available at the fulfillment center.
      */
-    private Packaging packaging ;
+    private Packaging packaging;
 
 
     /**
      * Instantiates a new FcPackagingOption object.
+     *
      * @param fulfillmentCenter - the FC where the packaging Option is available
-     * @param packaging - the packaging option available at the provided FC
+     * @param packaging         - the packaging option available at the provided FC
      */
     public FcPackagingOption(FulfillmentCenter fulfillmentCenter, Packaging packaging) {
         this.fulfillmentCenter = fulfillmentCenter;
@@ -55,7 +56,7 @@ public class FcPackagingOption {
 
         FcPackagingOption that = (FcPackagingOption) o;
         return Objects.equals(getFulfillmentCenter(), that.getFulfillmentCenter()) &&
-            Objects.equals(getPackaging(), that.getPackaging());
+                Objects.equals(getPackaging(), that.getPackaging());
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.amazon.ata.types.ShipmentOption;
 
 /**
  * A strategy to calculate the cost of a ShipmentOption.
- *
+ * <p>
  * The cost may be a monetary cost or more abstract like an environmental cost.
  */
 
@@ -18,5 +18,4 @@ public interface CostStrategy {
      * @return total cost of the shipment option
      */
     ShipmentCost getCost(ShipmentOption shipmentOption);
-
 }

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * Represents an Amazon fulfillment center.
- *
+ * <p>
  * Fulfillment centers receive orders, pack the items, and ship them to customers.
  */
 public class FulfillmentCenter {
@@ -16,6 +16,7 @@ public class FulfillmentCenter {
 
     /**
      * Instantiates a new FulfillmentCenter object.
+     *
      * @param fcCode - the unique identifier for the new fulfillment center
      */
     public FulfillmentCenter(String fcCode) {
@@ -29,8 +30,8 @@ public class FulfillmentCenter {
     @Override
     public String toString() {
         return "FulfillmentCenter{" +
-            "fcCode='" + fcCode + '\'' +
-            '}';
+                "fcCode='" + fcCode + '\'' +
+                '}';
     }
 
     @Override

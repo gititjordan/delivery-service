@@ -16,6 +16,7 @@ public class NoPackagingFitsItemException extends Exception {
 
     /**
      * Exception with a message, but no cause.
+     *
      * @param message A descriptive message for this exception.
      */
     public NoPackagingFitsItemException(String message) {
@@ -24,6 +25,7 @@ public class NoPackagingFitsItemException extends Exception {
 
     /**
      * Exception with no message, but with a cause.
+     *
      * @param cause The original throwable resulting in this exception.
      */
     public NoPackagingFitsItemException(Throwable cause) {
@@ -32,8 +34,9 @@ public class NoPackagingFitsItemException extends Exception {
 
     /**
      * Exception with message and cause.
+     *
      * @param message A descriptive message for this exception.
-     * @param cause The original throwable resulting in this exception.
+     * @param cause   The original throwable resulting in this exception.
      */
     public NoPackagingFitsItemException(String message, Throwable cause) {
         super(message, cause);

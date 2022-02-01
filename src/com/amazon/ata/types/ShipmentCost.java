@@ -12,8 +12,9 @@ public class ShipmentCost implements Comparable<ShipmentCost> {
 
     /**
      * Initializes a ShipmentCost object.
+     *
      * @param shipmentOption - the ShipmentOption the cost was calculated for
-     * @param cost - the cost of using the provided ShipmentOption
+     * @param cost           - the cost of using the provided ShipmentOption
      */
     public ShipmentCost(ShipmentOption shipmentOption, BigDecimal cost) {
         this.shipmentOption = shipmentOption;
