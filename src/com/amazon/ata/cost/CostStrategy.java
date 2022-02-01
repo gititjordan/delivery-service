@@ -8,6 +8,7 @@ import com.amazon.ata.types.ShipmentOption;
  *
  * The cost may be a monetary cost or more abstract like an environmental cost.
  */
+
 public interface CostStrategy {
 
     /**
@@ -17,4 +18,5 @@ public interface CostStrategy {
      * @return total cost of the shipment option
      */
     ShipmentCost getCost(ShipmentOption shipmentOption);
+
 }

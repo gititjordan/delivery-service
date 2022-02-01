@@ -1,0 +1,27 @@
+@startuml
+!pragma layout smetana
+
+class MonetaryCostStrategy {
+
+}
+
+class CarbonCostStrategy {
+
+}
+
+class WeightedCostStrategy {
+
+}
+
+interface CostStrategy {
+
+getCost() : ShipmentCost
+getCost(ShipmentOption) : ShipmentOption
+
+}
+CarbonCostStrategy -> WeightedCostStrategy
+WeightedCostStrategy ->  MonetaryCostStrategy
+CarbonCostStrategy ..|> CostStrategy
+WeightedCostStrategy ..|> CostStrategy
+MonetaryCostStrategy ..|> CostStrategy
+@enduml

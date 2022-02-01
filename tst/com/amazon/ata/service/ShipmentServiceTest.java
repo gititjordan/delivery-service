@@ -5,8 +5,11 @@ import com.amazon.ata.dao.PackagingDAO;
 import com.amazon.ata.datastore.PackagingDatastore;
 import com.amazon.ata.types.FulfillmentCenter;
 import com.amazon.ata.types.Item;
+import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentOption;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 import java.math.BigDecimal;
 
@@ -31,7 +34,11 @@ class ShipmentServiceTest {
     private FulfillmentCenter existentFC = new FulfillmentCenter("ABE2");
     private FulfillmentCenter nonExistentFC = new FulfillmentCenter("NonExistentFC");
 
-    private ShipmentService shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
+    @Mock
+    PackagingDAO packagingDAO;
+
+    @InjectMocks
+    private ShipmentService shipmentService = new ShipmentService(new PackagingDAO( new PackagingDatastore()),
             new MonetaryCostStrategy());
 
     @Test

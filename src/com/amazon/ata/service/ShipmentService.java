@@ -10,7 +10,6 @@ import com.amazon.ata.types.ShipmentOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 /**
  * This class is responsible for finding the appropriate shipment option from all available options returned
@@ -46,7 +45,7 @@ public class ShipmentService {
      */
     public ShipmentOption findShipmentOption(final Item item, final FulfillmentCenter fulfillmentCenter) {
         try {
-            List<ShipmentOption> results = (List<ShipmentOption>) this.packagingDAO.findShipmentOptions(item, fulfillmentCenter);
+            List<ShipmentOption> results = this.packagingDAO.findShipmentOptions(item, fulfillmentCenter);
             return getLowestCostShipmentOption(results);
         } catch (Exception e) {
             return null;
