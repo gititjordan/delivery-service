@@ -10,10 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CarbonCostStrategy implements CostStrategy {
+
+
     private final Map<Material, BigDecimal> materialCostPerGram;
 
+
     /**
-     * Calculate carbon cost.
+     * Initialize CarbonCostStrategy.
      */
     public CarbonCostStrategy() {
         materialCostPerGram = new HashMap<>();

@@ -18,7 +18,6 @@ public class MonetaryCostStrategy implements CostStrategy {
     private final Map<Material, BigDecimal> materialCostPerGram;
 
 
-
     /**
      * Initializes a MonetaryCostStrategy.
      */

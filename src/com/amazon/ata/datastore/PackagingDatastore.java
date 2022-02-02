@@ -32,7 +32,21 @@ public class PackagingDatastore {
             createFcPackagingOption("IAD2", Material.CORRUGATE, "20", "20", "20"),
             createFcPackagingOption("PDX1", Material.CORRUGATE, "40", "40", "40"),
             createFcPackagingOption("PDX1", Material.CORRUGATE, "60", "60", "60"),
-            createFcPackagingOption("PDX1", Material.CORRUGATE, "60", "60", "60")
+            createFcPackagingOption("PDX1", Material.CORRUGATE, "60", "60", "60"),
+            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
+            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
+            createFcPackagingOption("IAD2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
+            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
+            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
+            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
+            createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
+            createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
+            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(2000)),
+            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(6000)),
+            createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000)),
+            createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(10000)),
+            createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, BigDecimal.valueOf(5000))
+
 
     );
 
